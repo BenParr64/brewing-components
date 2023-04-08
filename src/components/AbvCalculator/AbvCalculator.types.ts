@@ -3,5 +3,6 @@ export interface ABVCalculatorProps {
   initialFinalGravity?: number;
   originalGravity?: number;
   finalGravity?: number;
+  title?: string;
   onABVChange?: (abv: number) => void;
 }
