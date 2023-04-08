@@ -6,12 +6,16 @@ import { OpacityRounded } from "@mui/icons-material";
 export const ABVCalculator: React.FC<ABVCalculatorProps> = ({
   initialOriginalGravity = 1.05,
   initialFinalGravity = 1.01,
+  originalGravity: propOriginalGravity,
+  finalGravity: propFinalGravity,
   onABVChange,
 }) => {
   const [originalGravity, setOriginalGravity] = useState(
-    initialOriginalGravity
+    propOriginalGravity ?? initialOriginalGravity
   );
-  const [finalGravity, setFinalGravity] = useState(initialFinalGravity);
+  const [finalGravity, setFinalGravity] = useState(
+    propFinalGravity ?? initialFinalGravity
+  );
   const [abv, setAbv] = useState(0);
 
   useEffect(() => {
